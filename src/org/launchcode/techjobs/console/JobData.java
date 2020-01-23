@@ -19,6 +19,7 @@ public class JobData {
     private static final String DATA_FILE = "resources/job_data.csv";
     private static Boolean isDataLoaded = false;
 
+    //arrayList that stores HashMap objects which have String keys and String values.
     private static ArrayList<HashMap<String, String>> allJobs;
 
     /**

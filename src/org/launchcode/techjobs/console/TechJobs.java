@@ -2,6 +2,7 @@ package org.launchcode.techjobs.console;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 /**
@@ -70,6 +71,7 @@ public class TechJobs {
     }
 
     // ﻿Returns the key of the selected item from the choices Dictionary
+    //Takes in a String (menuHeader) to display above the menu, to provide context for what they are being asked. It also takes in a HashMap with String keys and String values.
     private static String getUserSelection(String menuHeader, HashMap<String, String> choices) {
 
         Integer choiceIdx;
@@ -110,7 +112,16 @@ public class TechJobs {
 
     // Print a list of jobs
     private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
+        if (someJobs.size() == 0){
+            System.out.println("Sorry, this search term did not return any results!");
+        }
+        for (HashMap<String, String> jobs : someJobs) {
+            System.out.println("*****");
+            for (Map.Entry<String, String> job : jobs.entrySet()){
+                System.out.println(job.getKey() + ": " + job.getValue());
 
-        System.out.println("printJobs is not implemented yet");
+            }
+            System.out.println("*****");
+        }
     }
 }
