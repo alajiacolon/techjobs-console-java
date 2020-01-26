@@ -75,9 +75,8 @@ public class JobData {
         ArrayList<HashMap<String, String>> jobs = new ArrayList<>();
 
         for (HashMap<String, String> row : allJobs) {
-
-            String aValue = row.get(column);
-
+            //Get value from allJobs and change to lowercase
+            String aValue = row.get(column).toLowerCase();
             if (aValue.contains(value)) {
                 jobs.add(row);
             }
@@ -94,7 +93,10 @@ public class JobData {
         //Loops through allJobs to look for the specified value
         for (HashMap<String, String> job : allJobs) {
             for (Map.Entry<String, String> line : job.entrySet()){
-                if (line.getValue().contains(value)) {
+                //change line.getValue to one case
+                String lineValue = line.getValue().toLowerCase();
+
+                if (lineValue.contains(value)) {
                     values.add(job);
                 }
             }
